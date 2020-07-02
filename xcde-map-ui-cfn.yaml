@@ -1,0 +1,299 @@
+---
+Description: XCDE Map UI
+Parameters:
+  EnvironmentName:
+    Type: String
+    Default: cfgXcdeMapUI
+  HostedZoneName:
+    Type: String
+  PublicSubnets:
+    Type: List<AWS::EC2::Subnet::Id>
+  PDXCENV:
+    Type: String
+  Certificate:
+    Type: String
+  ImageVersion:
+    Type: String
+    Default: latest
+  RepoCreds:
+    Type: String
+    Default: cfgRepoCredentials
+  InstanceRole:
+    Type: String
+    Default: cfgECSInstances
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+  TaskSubnets:
+    Description: Subnets to run the ECS Task in
+    Type: List<AWS::EC2::Subnet::Id>
+Resources:
+  MapUIAlb:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name:
+        Fn::Sub: "${EnvironmentName}-ALB"
+      Subnets:
+        Ref: PublicSubnets
+      Type: network
+      Tags:
+        - Key: Name
+          Value:
+            Fn::Sub: "${EnvironmentName}-ALB"
+        - Key: name
+          Value:
+            Fn::Sub: "${EnvironmentName}-ALB"
+        - Key: environment
+          Value:
+            Ref: PDXCENV
+        - Key: application-id
+          Value: cfgXcdeMapUI
+        - Key: capability
+          Value: configuration-management
+        - Key: AutoStopPreventedBy
+          Value: config-transport-devops@dxc.com
+        - Key: owner
+          Value: config-transport-devops@dxc.com
+        - Key: group
+          Value: cfg
+        - Key: ooss-compliance
+          Value: ''
+  
+  dnsRecordSet:
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneName:
+        Ref: HostedZoneName
+      RecordSets:
+        - Name:
+            Fn::Join:
+              - "."
+              - - xcde-map-ui
+                - Ref: HostedZoneName
+          Type: A
+          AliasTarget:
+            HostedZoneId:
+              Fn::GetAtt:
+                - MapUIAlb
+                - CanonicalHostedZoneID
+            DNSName:
+              Fn::GetAtt:
+                - MapUIAlb
+                - DNSName
+  
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      RetentionInDays: 365
+
+  ECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: cfgXcdeMapUI
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: XCDE MapUI Security Group
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - CidrIp: 10.0.0.0/8
+          FromPort: 80
+          ToPort: 80
+          IpProtocol: TCP
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: -1
+  
+  DBTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: cfgXcdeMapDB
+      ExecutionRoleArn: !Ref InstanceRole
+      TaskRoleArn: !Ref InstanceRole
+      ContainerDefinitions:
+        - Name: DBDeployment
+          Image: !Sub 'docker.dxc.com:8085/xcde-map-db:${ImageVersion}'
+          RepositoryCredentials:
+            CredentialsParameter: !Ref RepoCreds
+          Essential: true
+          PortMappings:
+            - ContainerPort: 80
+          Environment:
+            - Name: AWS_REGION
+              Value: !Ref AWS::Region
+            - Name: DOMAIN_NAME
+              Value: !Ref HostedZoneName
+            - Name: DB_HOSTNAME
+              Value: !GetAtt cfgXcdeUIRDSInstance.Endpoint.Address
+            - Name: DB_PORT
+              Value: !GetAtt cfgXcdeUIRDSInstance.Endpoint.Port
+            - Name: DB_SECRET_ARN
+              Value: !Ref cfgXCDEMapUISecret
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: XcdeMapDB
+      Cpu: 256
+      Memory: 512
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+  
+  UITaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: cfgXcdeMapUI
+      ExecutionRoleArn: !Ref InstanceRole
+      TaskRoleArn: !Ref InstanceRole
+      ContainerDefinitions:
+        - Name: MapUI
+          Image: !Sub 'docker.dxc.com:8085/xcde-map-ui:${ImageVersion}'
+          RepositoryCredentials:
+            CredentialsParameter: !Ref RepoCreds
+          Essential: true
+          PortMappings:
+            - ContainerPort: 80
+          Environment:
+            - Name: AWS_REGION
+              Value: !Ref AWS::Region
+            - Name: DOMAIN_NAME
+              Value: !Ref HostedZoneName
+            - Name: DB_HOSTNAME
+              Value: !GetAtt cfgXcdeUIRDSInstance.Endpoint.Address
+            - Name: DB_PORT
+              Value: !GetAtt cfgXcdeUIRDSInstance.Endpoint.Port
+            - Name: DB_SECRET_ARN
+              Value: !Ref cfgXCDEMapUISecret
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: !Ref LogGroup
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: XcdeMapDB
+      Cpu: 256
+      Memory: 512
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+
+  Service:
+    Type: AWS::ECS::Service
+    DependsOn:
+      - Listener443
+    Properties:
+      LaunchType: FARGATE
+      Cluster: !Ref ECSCluster
+      DesiredCount: 2
+      TaskDefinition: !Ref UITaskDefinition
+      DeploymentConfiguration:
+        MaximumPercent: 200
+        MinimumHealthyPercent: 100
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          Subnets: !Ref TaskSubnets
+          SecurityGroups:
+            - !Ref SecurityGroup
+      LoadBalancers:
+        - ContainerName: MapUI
+          ContainerPort: 80
+          TargetGroupArn: !Ref xcdeMapUIAlbTargetGroup
+
+  Listener443:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref MapUIAlb
+      Certificates:
+        - CertificateArn: !Ref Certificate
+      Port: 443
+      Protocol: TLS
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref xcdeMapUIAlbTargetGroup
+
+  xcdeMapUIAlbTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: !Sub "${EnvironmentName}TargetGroup"
+      VpcId: !Ref VpcId
+      Port: 80
+      Protocol: TCP
+      TargetGroupAttributes:
+        - Key: deregistration_delay.timeout_seconds
+          Value: 30
+      TargetType: ip
+      HealthCheckIntervalSeconds: 10
+      HealthCheckPath: "/"
+      HealthCheckProtocol: "HTTP"
+
+  cfgXCDEMapUIDBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security group for cfgXCDEMapUIDB database
+      SecurityGroupIngress:
+        - IpProtocol: "tcp"
+          FromPort: 1433
+          ToPort: 1433
+          SourceSecurityGroupId: !GetAtt SecurityGroup.GroupId
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      VpcId: !Ref VpcId
+  
+  cfgXCDEMapUISecret:
+    Type: AWS::SecretsManager::Secret
+    Properties:
+      GenerateSecretString:
+        ExcludePunctuation: true
+      Name: cfgXCDEMapUIDBSecret
+  
+  cfgXCDEMapUIDBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Subnet group for cfgXCDEMapUIDB database
+      SubnetIds: !Ref TaskSubnets
+
+  cfgXcdeUIRDSInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      DBInstanceClass: db.m5.large
+      AllocatedStorage: "100"
+      CopyTagsToSnapshot: true
+      DBInstanceIdentifier: cfgXCDEMapUIDB
+      DBSubnetGroupName:
+        Ref: cfgXCDEMapUIDBSubnetGroup
+      DeletionProtection: true
+      Engine: sqlserver-se
+      LicenseModel: license-included
+      MasterUsername: admin
+      MasterUserPassword:
+        Fn::Join:
+          - ""
+          - - "{{resolve:secretsmanager:"
+            - Ref: cfgXCDEMapUISecret
+            - :SecretString:::}}
+      PubliclyAccessible: false
+      StorageType: gp2
+      VPCSecurityGroups:
+        - Fn::GetAtt:
+            - cfgXCDEMapUIDBSecurityGroup
+            - GroupId
+
+Outputs:
+  DBHostname:
+    Description: RDS DB Hostname
+    Value: !GetAtt cfgXcdeUIRDSInstance.Endpoint.Address
+  DBPort:
+    Description: RDS DB Port
+    Value: !GetAtt cfgXcdeUIRDSInstance.Endpoint.Port
+  DBSecretARN:
+    Description: DB Secret ARN
+    Value: !Ref cfgXCDEMapUISecret
+  SecurityGroup:
+    Description: SG for ECS Tasks
+    Value: !GetAtt SecurityGroup.GroupId
+  DBTaskDef:
+    Description: DB Task Definition
+    Value: !Ref DBTaskDefinition

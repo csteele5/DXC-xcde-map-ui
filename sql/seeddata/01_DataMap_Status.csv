@@ -1,0 +1,7 @@
+MapStatusID,MapStatus,DisplayOrder,Inactive
+1,Draft,10,False
+2,Approved for Deployment,40,False
+3,Retired,50,False
+4,Submitted For Review,20,False
+5,Under Review,30,False
+6,Cancelled,60,False

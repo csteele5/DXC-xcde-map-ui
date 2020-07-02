@@ -1,0 +1,33 @@
+
+
+/* ==========================================================================
+   this mitigates issues with media queries for IE 8 and below.  
+   Primarily, the main.css only loads background images when the screen
+   width is gt 480.  assuming ie 8- will not be run on small screens, we
+   can load outside of media queries if these browsers are detected.
+   ========================================================================== */
+
+body.loginPage div.container {
+	background-image:url(img/is_asianmanontablet_c_hi.jpg);
+	background-repeat:no-repeat;
+	background-position: right top;
+	width:1200px;
+	height:800px;
+}
+
+body.homePage div.container {
+	background-image:url(img/boyhandfocus_42_30947872_bw.jpg);
+	background-repeat:no-repeat;
+	background-position: right top;
+	height:800px;
+}
+
+
+
+
+
+
+
+
+
+

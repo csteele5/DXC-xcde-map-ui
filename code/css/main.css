@@ -1,0 +1,1796 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/****************** Supercede Bootstrap.min Style ******************/
+body.proxyPage .alert,
+body.proxyPage .alert h4 {
+  /*color: #c09853;*/
+  color: #b94a48;
+}
+/****************** END Supercede Bootstrap Style ******************/
+
+.invertedText {
+	color: #FFF !important;
+}
+
+/****************** Table styling ******************/
+.tblCell_Center {
+	text-align: center !important;
+}
+.tblCell_Right {
+	text-align: right !important;
+}
+.tblCell_Action {
+	text-align: center !important;
+	width:50px;
+	cursor:pointer;
+}  
+.tblCell_Data {
+	text-align: center !important;
+	width:70px;
+}  /* THERE IS A READONLY CLASS to be used with this in general section */ 
+
+.tblCell_Button {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.tblCell_Maximize {
+	width: 100%;
+}
+
+.tblCell_StackedItemsNoBtmPad {
+	padding-bottom: 0px !important;
+}
+
+table th.checkBoxCell  {
+	width: 10px;
+}
+
+.table-condensed th, .table-condensed td {
+	padding: 2px 4px;
+	line-height: 16px;
+}
+
+span.tableDetails {
+	font-size:.8em !important;
+}
+
+.tblCell_noResults {
+	line-height: 30px !important;
+	padding-left: 10px !important;
+	color: #b94a48 !important;
+}
+
+.tblCell_moreResults {
+	line-height: 30px !important;
+	padding-left: 10px !important;
+	color:#999 !important;
+	text-align: center !important;
+	cursor: pointer;
+}
+
+.tblCell_getResults {
+	background-image: url('indicator.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 40px !important;
+}
+
+.tblHead_menuDropdown_left {
+	float: left;	
+}
+
+.tblHead_menuDropdownLabel_left {
+	float: left;
+	padding-top: 8px;
+    padding-left: 5px;
+}
+
+.tblHead_menuDropdown_right {
+	float: right;	
+}
+
+.tblHead_menuDropdownLabel_right {
+	float: right;/**/
+	padding-top: 8px;
+    padding-right: 5px;
+}
+
+tr.reqDescRow td {
+	border-top: none;
+}
+
+table.subTable {
+	margin-left: 40px;
+    font-size: .8em !important;
+    margin-bottom: 5px;
+}
+
+table.subTable td, table.subTable th{
+    padding: 2px !important;
+}
+
+td.checkboxLabel {
+	padding-top: 5px;
+}
+
+input.inputHide {
+	display:none !important;
+}
+
+div.accordion-inner table {
+	margin-bottom: 5px !important;
+}
+
+div.controlTopSpacing {
+	padding-top: 5px;
+}
+
+.fieldSetTopMargin {
+	margin-top: 10px;
+}
+
+.horizontalLabelTitleCell {
+	margin-top: 6px;
+    padding-right: 20px;
+    font-size: 14px;
+}
+
+.horizontalLabelCell {
+	margin-bottom: 5px;
+    padding-right: 20px;
+}
+
+.horizontalCheckBoxCell {
+    padding-bottom: 10px;
+}
+
+.cellNoWrap {
+	white-space: nowrap !important;
+}
+
+.cellSetWidth25 {
+    width: 25px !important;
+}
+
+.cellSetWidth50 {
+    width: 50px !important;
+}
+
+.cellSetWidth100 {
+    width: 100px !important;
+}
+
+.cellSetWidth150 {
+    width: 150px !important;
+}
+
+.cellSetWidth200 {
+    width: 200px !important;
+}
+
+.cellSetWidth250 {
+    width: 250px !important;
+}
+
+.cellSetWidth300 {
+    width: 300px !important;
+}
+
+.marginBottom10 {
+	margin-bottom: 10px !important;
+}
+
+.marginBottom5 {
+	margin-bottom: 5px !important;
+}
+
+/*This is a new tag, named as such to prevent span, div or row association with existing css*/
+loadIndicator {
+	background-image: url('indicator.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	display: none;
+	height: 20px !important;
+	width: 20px !important;
+}
+loadIndicator.showLoading {
+	display: inline-block;
+}
+
+
+
+/****************** END Table styling ******************/
+
+/*******************  Static page styling  ******************/
+
+body.staticBody div.container { 
+	min-width: 1150px !important;
+}
+
+body.staticBody .visible-tablet { 
+	visibility:hidden !important;
+}
+
+body.staticBody .visible-phone { 
+	visibility:hidden !important;
+}
+
+/****************** END Static page styling ******************/
+
+/*******************  General styling  ******************/
+
+body { 
+	font-size: .8em !important;
+}
+
+div.container-ExtraWide {
+	width: 90% !important;
+}
+
+div.container-Main, div#mainBodyContainer {
+	min-height: 600px;
+}
+
+div.moreLinkDiv {
+	margin-left: 5px !important;
+	padding-top: 5px;
+	margin-bottom: 10px;
+}
+
+div.container-fluid {
+	padding: 0px;
+}
+
+div.hero-unit {
+	padding:50px;
+	margin-bottom:10px;
+}
+
+.hero-unit h1 {
+	margin-bottom:10px;
+}
+
+div.hero-unit.alert {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  color: #c09853;
+  padding:30px;
+}
+
+div.hero-unit-tight {
+	padding:10px 30px 10px 30px !important;
+	margin-bottom:10px;
+	background-color: #f8940629 !important;
+}
+
+.hero-unit-tight h2 {
+	margin-bottom:10px;
+}
+
+.hidden-initial {
+	display:none;
+}
+
+.hidden-loading {
+	display:none;
+}
+
+.noBottomMargin {
+	margin-bottom: 0px;
+}
+
+ul.breadcrumb {
+	margin-bottom: 10px;
+}
+
+div.alert {
+	margin-bottom: 10px;
+}
+
+div.alert h4 {
+	padding-bottom: 5px;
+}
+
+
+
+.alert-grey {
+  /*color: #3a87ad;*/
+  background-color: #f9f9f9;
+  /*border-color: #bce8f1;*/
+}
+
+hr.shorthr {
+	margin:10px 0px !important;
+}
+
+hr.minihr {
+	margin:0px 0px 5px 0px !important;
+}
+
+/*fieldset.table-container div {
+	margin-left:0px !important;
+}*/
+
+div.leftJustify {
+	margin-left:0px !important;
+}
+
+.leftInternalPadding {
+	padding-left:10px !important;
+}
+
+tr.loadingRow td {
+	height:50px;
+	text-align:center;
+	border:0px;
+}
+
+div.loadingImageDiv {
+	background-image:url('ajax-loader.gif');
+	background-repeat:no-repeat;
+	background-position: right top;
+	width:220px;
+	height:19px;
+	margin:15px auto;
+}
+
+/*use this for entire divs or cells */
+.boldText {
+	font-weight: bold;
+}
+
+span.functionLink {
+	cursor: pointer;
+	/*color:#666;*/
+	color:#08C;
+}
+
+span.infoLink {
+	font-size: 14px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.addPointer {
+	cursor: pointer;
+}
+
+.readonly  {
+  cursor: not-allowed !important;
+} 
+
+.commentEllipses {
+	cursor: pointer;
+	color:#08C;
+}
+
+/*use when badge highlights primary action.  see proxy menus */
+span.badgeAction {
+	padding: 4px 8px;
+}
+
+.navbar .brand {
+	font-size: 18px !important;
+}
+
+div.navbar.navbar-fixed-top a.brand {
+	display: inline-block;
+	width: 110px;
+}
+
+.btn-toolbar .btnbar-formElement {
+	vertical-align: middle;
+    margin-top: 1px;
+    margin-bottom: 0px !important;
+    margin-left: 5px;
+}
+
+ul.nav-tabs div.btn-toolbar {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+
+}
+
+/*li span.divider {
+	font-weight: bold;
+}*/
+.breadcrumb>li>.divider {
+	color: #a29c9c !important;
+	font-weight: bold !important;
+}
+/*div.navbar.submenu select, div.navbar.submenu input {
+margin-bottom: 0px;
+margin-top: 5px;
+}
+div.navbar.submenu span.add-on {
+margin-top: 5px;
+min-width: 100px;
+}*/
+
+div.navbar.submenu a.brand {
+	display:inline-block;
+	width:160px;
+}
+
+
+div.navbar.submenu select,
+div.navbar.submenu input {
+	margin-bottom: 0px;
+	margin-top: 5px;
+}
+
+div.navbar.submenu span.add-on {
+	margin-top: 5px;
+	min-width: 100px;
+}
+
+div.navbar.submenu div.input-prepend {
+	margin-bottom: 5px;
+}	
+
+div.navbar.submenu div.nav {
+	margin-right: 20px;
+}	
+
+
+/*highlight rows or elements through jquery by toggling these classes */
+.groupHighlight-success {
+	background-color: #d0e9c6 !important;
+}
+.groupHighlight-error {
+	background-color: #ebcccc !important;
+}
+.groupHighlight-warning {
+	background-color: #faf2cc !important;
+}
+.groupHighlight-info {
+	background-color: #c4e3f3 !important;
+}
+
+.ac_results li {
+padding: 4px 5px;
+font-size: 16px;
+line-height: 16px;
+}
+
+span.span-spacing-right {
+	margin-right: 8px;
+}
+
+.nowrap {
+	white-space:nowrap;
+}
+
+div.tableHeader {
+	font-size: 21px;
+	line-height: 30px;
+	color: rgb(51, 51, 51);
+	margin-top:10px !important;
+	border: 0;
+	border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+div.tableHeader .btn-toolbar {
+	margin-top: 0px;
+	margin-bottom: 2px;
+}
+
+div.btn-block-group {
+	margin: 10px 0px;
+}
+
+
+
+/*** button block styling ***/  
+div.controls div.btn-group-full-justified {
+	width: 100%;
+}
+div.controls div.btn-group-full-justified button.btn-2wide {
+	width: 50%;
+}
+
+/*** END button block styling ***/  
+
+/******************  END General styling  ******************/
+
+/******************  Modal Window styling  ******************/
+.modal.fade.in {
+	top: 1%; 
+}
+
+.modal-body dd {
+	margin-bottom: 5px;
+}
+
+.modal-body .input-xxlarge {
+	width: 85% !important; /*HACK! */
+}
+
+.datepicker{
+    z-index: 1100 !important;
+}
+
+.modal-customLarge .modal-body {
+    max-height: 700px;
+    overflow: visible;
+}
+
+.modal-body-tall {
+    max-height: 900px !important;
+}
+
+.modal-body-forcetall {
+    min-height: 700px !important;
+}
+
+.modal-body-forcemedium {
+    min-height: 400px !important;
+}
+
+.modal-body-forceextramedium {
+    min-height: 550px !important;
+}
+
+/*
+*/
+@media screen and (min-width: 992px) {
+    .modal-wide {
+      width: 700px; 
+      margin-left: -350px;
+    }
+}
+
+/*.modal .modal-dialog { width: 80%; }*/
+.modal .modal-wide { width: 80%; }
+
+
+/*
+*/
+@media screen and (min-width: 992px) {
+    .modal-xwide {
+      width: 95%; 
+		left: 25%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .modal-xwide {
+      width: 95%; 
+		/*left: 25%;*/
+    }
+}
+
+
+.modal .modal-xwide { 
+	width: 95% ;
+}
+
+.modal-mwide { 
+	width: 85% ;
+	left: 20%;
+}
+
+.modal-swidecenter { 
+	width: 60% ;
+}
+
+
+
+/*
+.modal-body .datepicker {
+    position: relative; z-index: 100000 !important;
+}
+body.modal-open .datepicker {
+    z-index: 1501 !important;
+}
+.datepicker .bootstrap-datetimepicker-widget {
+    z-index: 100000 !important;
+}
+.ui-datepicker{
+z-index: 10000 !important;
+}
+*/
+
+/******************  END Modal Window styling  ******************/
+
+/******************  Form styling  ******************/
+
+legend {
+	margin-bottom:5px;
+	line-height:30px;
+}
+
+legend.legendwform {
+	line-height:40px;
+}
+
+i.legendNav {
+	vertical-align: middle;
+}
+
+a.legendMoreLink {
+	font-size:.6em;
+}
+
+a.stackedNavIcons {
+	padding-bottom: 10px;
+	display: inline-block;
+}
+
+a.legendMoreLink:hover {
+	text-decoration:none;
+}
+
+legend button.btn-mini {
+	margin-top:3px;
+	margin-bottom: 5px;
+}
+
+li.tabGroup a {
+	background-color: #DAF7A6 !important;
+}
+
+li.tabGroup.active a {
+	font-weight: bold;
+}
+
+
+fieldset.dplyForm legend {
+    margin-bottom: 10px !important;
+    font-size: 18px;
+    line-height: 35px !important;
+
+}
+
+.form-horizontal .control-group {
+	margin-bottom: 8px;
+}
+
+.horizontal-menu-checkboxSpan {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.legend-checkboxSpan {
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+.shortLabel {
+	font-size:.8em;
+}
+
+/*select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	height:18px;
+	line-height:18px;
+}*/
+
+.input-micro {
+	  width: 25px;
+}
+
+.input-short {
+	height:20px;
+	line-height:20px;
+}
+
+.input-mini-special {
+	width:70px !important;
+	font-size:.9em !important;
+}
+
+.input-xxxlarge {
+	width: 95% !important;
+}
+
+.stackedFormElement {
+	margin-top:10px;
+}
+
+.input-topAlign {
+	vertical-align: top !important;
+}
+
+#dirtyFormMsg {
+  color: #b94a48;
+}
+
+span#dirtyFormMsg {
+  margin-left:5px;
+}
+
+span.help-inline-error {
+	color: #b94a48;
+}
+
+/*** had to create readonly text area  ***/
+.uneditable-textarea {
+	background-color:#FFFFFF !important;
+	/*color:#fcfcfc;*/
+}
+.control-group {
+	margin-bottom: 2px;
+}
+.control-group .textOnly {
+	padding-top: 5px;
+	display: inline-block;
+}
+
+.radioLabel {
+	padding-right: 20px;
+}
+
+select.element-Highlighted, input.element-Highlighted, textarea.element-Highlighted {
+	color: #468847;
+	background-color: #dff0d8;
+	border: 2px solid #468847;
+}
+
+select option.option-highlight {
+	font-weight:bold !important;
+	color:#f00 !important;
+}
+
+/* for horizontal form elements within a table */
+td.form-ElementContainer {
+	padding-right: 40px;
+}
+.topFormPadding {
+	padding-top: 20px;
+}
+
+/*** data grid styling ***/  
+
+	.dataGrid .control-group {
+		margin-bottom: 4px;
+	}
+
+	.dataGrid label,
+	.dataGrid input,
+	.dataGrid select,
+	.dataGrid textarea
+	 {
+		font-size: 10px;
+		line-height: 16px;
+	}
+
+	.dataGrid select, 
+	.dataGrid input[type="text"], 
+	.dataGrid input[type="password"], 
+	.dataGrid input[type="datetime"], 
+	.dataGrid input[type="datetime-local"], 
+	.dataGrid input[type="date"], 
+	.dataGrid input[type="month"], 
+	.dataGrid input[type="time"], 
+	.dataGrid input[type="week"], 
+	.dataGrid input[type="number"], 
+	.dataGrid input[type="email"], 
+	.dataGrid input[type="url"], 
+	.dataGrid input[type="search"], 
+	.dataGrid input[type="tel"], 
+	.dataGrid input[type="color"], 
+	.dataGrid .uneditable-input
+	 {
+		height: 14px;
+		padding: 2px 4px;
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+	.dataGrid textarea
+	 {
+		padding: 2px 4px;
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+	.dataGrid select, 
+	.dataGrid input[type="file"] {
+		height: 20px;
+		line-height: 14px;
+	}
+
+	.dataGrid .control-label {
+		width: 130px;
+	}
+
+	.dataGrid .controls {
+		margin-left: 140px;
+	}
+
+	.dataGrid .controls a {
+		font-size: 10px;
+	}
+
+	.dataGrid legend {
+		font-size: 16px;
+	}
+
+
+	.dataGrid .input-micro {
+	  width: 20px;
+	}
+
+
+	.dataGrid .input-mini {
+	  width: 50px;
+	}
+
+	.dataGrid .input-small {
+	  width: 75px;
+	}
+
+	.dataGrid .input-medium {
+	  width: 130px;
+	}
+
+	.dataGrid .input-large {
+	  width: 180px;
+	}
+
+	.dataGrid .input-xlarge {
+	  width: 230px;
+	}
+
+	.dataGrid .input-xxlarge {
+	  width: 480px;
+	}
+
+
+legend .menuItem {
+	margin-bottom: 0 !important;
+}
+
+form.no-Margin {
+	margin: 0 0 0 0 !important;
+}
+
+
+/*** END data grid styling ***/  
+
+.input-percent {
+	width:30px;
+}
+
+/*** Read only auto expanding textarea replacement.  use with WELL div  ***/
+div.readOnlyTextAreaDiv {
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+
+.subFormContainer {
+	padding:20px !important;
+	color: inherit;
+    background-color: #eee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin-bottom:20px;
+
+	}
+
+
+.subFormContainerFrameOnly {
+	padding:20px !important;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    margin-bottom:20px;
+
+	}
+
+div.subCheckBoxBlock {
+	margin-left: 20px;
+}
+div.subCheckBoxBlock label.radioLabel {
+	font-size: 10px !important;
+}
+
+
+/******************  END Form styling  ******************/
+
+/******************  According styling  ******************/
+.accordion-group.accordion-borderless {
+	border: 0px;
+}
+
+.accordion-inner.according-nopad {
+	padding: 0px;
+}
+
+.accordion-inner.accordion-borderless {
+	border: 0px;
+}
+
+div.according-heading-activity {
+	padding-left: 165px;
+	padding-bottom: 5px;
+}
+
+div.according-heading-proxy {
+	padding-left: 165px;
+	padding-bottom: 5px;
+}
+
+div.according-heading  a.accordion-toggle {
+	padding-top: 0px;
+}
+
+/******************  END According styling  ******************/
+
+/******************  High chart styling  ******************/
+div.dashboardpanel_wideStyle1{
+    height:300px;
+    /*width:1000px;*/
+    width:100%;
+    float:left;
+    background:#FFF;
+    position:relative;
+    /*cursor:pointer;*/
+    margin-left:10px;   
+}
+div.dashboardpanel_halfStyle1{
+	height:300px;
+	/*width:500px;*/
+	width:48%;
+	float:left;
+	background:#FFF;
+	position:relative;
+	margin-left:10px;   
+}
+
+div.tallPanel {
+	height: 500px;
+}
+
+/******************  END High chart styling  ******************/
+
+/******************  Calendar styling  ******************/
+div.pxyListresult_wideStyle1 {
+    width:100%;
+	/*width: 900px;*/
+	margin: 0 auto;
+}
+div.pxyListresult_halfStyle1 {
+    width:48%;
+	/*width: 900px;*/
+	margin: 0 auto; 
+}
+
+/******************  END Calendar styling  ******************/
+
+
+/******************  widget styling  ******************/
+div.widget-content {
+	/*width: 400px;*/
+	padding: 10px;
+	background-color: rgba(238, 238, 238, 0.9);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}	
+div.widget-content table {
+	background-color: rgb(255, 255, 255);
+	margin-bottom: 0px;
+}
+div.widget-content table td {
+	cursor: pointer;
+}
+
+/******************  END widget styling  ******************/
+
+
+/******************  workflow styling  ******************/
+
+.wkflow {
+  margin: 20px 0;
+  /*text-align: center;*/
+  list-style: none;
+  *zoom: 1;
+}
+
+.wkflow:before,
+.wkflow:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.wkflow:after {
+  clear: both;
+}
+
+.wkflow li {
+  display: inline;
+}
+
+.wkflow li > a,
+.wkflow li > span {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+}
+
+/*.wkflow li > a:hover,
+.wkflow li > a:focus {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}*/
+
+.wkflow .next > a,
+.wkflow .next > span {
+  float: right;
+}
+
+.wkflow .previous > a,
+.wkflow .previous > span {
+  float: left;
+}
+
+/*.wkflow .disabled > a,
+.wkflow .disabled > a:hover,
+.wkflow .disabled > a:focus,
+.wkflow .disabled > span {
+  color: #999999;
+  cursor: default;
+  background-color: #fff;
+}
+*/
+
+
+.wkflow li.active>a, .wkflow li.active>span {
+background-color: #3a87ad;
+color: #fff;
+}
+
+
+
+/******************  END workflow styling  ******************/
+
+/******************  Page specific styling  ******************/
+/***2015-10-16 wetPage styling  ***/
+body.wetPage label {
+	font-weight: bold;
+}
+
+
+/***2015-10-16 END wetPage styling  ***/
+
+
+body.dashboard div#loadingDiv {
+	margin-top: 150px;
+}
+
+body.alLogPage div.alert {
+	margin-bottom: 10px;
+}
+
+body.proxyPage button {
+	white-space:nowrap;
+}
+
+/*** reset spacing from legend to top of the list of locations.  ***/
+body.proxyPage legend#supportLocationLegend {
+	margin-bottom: 15px;
+}
+body.proxyPage legend#supportLocationLegend+.control-group {
+	margin-top: 0px !important;
+}
+
+
+/*** BEGIN set up status page styles ***/  
+body.proxyPage tr.editDataBlock {
+	/*border-bottom-width: 2px;
+	border-bottom-color: rgb(153, 153, 153);
+	border-bottom-style: solid;	*/
+}
+body.proxyPage tr.editDataBlock td {
+	padding-bottom: 10px;
+}
+body.proxyPage tr.editDataBlock > td {
+   background-color: #d9edf7;
+}
+body.proxyPage tr.editDataBlock label.control-label  {
+	/*padding-right: 10px;*/
+}
+body.proxyPage tr.editDataBlock div.controls-row {
+	/*display:inline-block;*/
+	/*padding-bottom: 10px;*/
+}
+body.proxyPage div.editDataBlock {
+	background-color: #d9edf7;
+}
+
+
+body.proxyPage input.ChargeNumber, body.proxySchedule input.ChargeNumber {
+	vertical-align: top;
+}
+
+/*** END set up status page styles ***/  
+
+
+/*** BEGIN set up scheduling blocks ***/   
+body.proxyPage legend#supportScheduleLegend {
+	margin-bottom: 0px;
+}
+
+
+body.proxySchedule fieldset#supportLocations div.locationRow {
+	background-color: #DDD;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	min-height: 20px;
+	line-height: 20px;
+	padding: 3px 3px 0px 3px;
+}
+body.proxySchedule fieldset#supportLocations div.locationRow.addedLocation {
+	background-color: #FCD2D9;
+}
+body.proxySchedule fieldset#supportLocations div.locationRow div.locAddressDiv {
+	/*font-weight: bold;*/
+	font-size: 1.2em;
+	color:#666;
+}
+body.proxySchedule fieldset#supportLocations div.locationRow div.locAddressDiv span.locDetails {
+	font-weight: normal;
+	font-size: .8em;
+	color:#666;
+}
+body.proxySchedule fieldset#supportLocations div.locationRow div.locAddressDiv span.locDetails .functionLink {
+	padding-left: 5px;
+}
+body.proxySchedule fieldset#supportLocations div.locationRow div.locAddressDiv span.locEditButtonDiv {
+	/*display: inline-block;*/
+	padding-bottom: 1px;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+body.proxySchedule fieldset#supportLocations div.scheduleBlock {
+	background-color: #F2F2F2;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	min-height: 20px;
+	line-height: 17px;
+	margin-bottom: 2px;
+	padding: 2px 5px;
+} 
+body.proxySchedule fieldset#supportLocations div.scheduleBlock div.repeatBlock {
+	background-color: #F2F2D2;
+}
+body.proxySchedule fieldset#supportLocations div.scheduleBlock span.repeatScheduleLink {
+	color: rgb(0, 136, 204);
+	/*text-decoration: underline;*/
+	cursor: pointer;
+}
+body.proxySchedule fieldset#supportLocations div.scheduleBlock span.repeatScheduleLink:hover {
+	text-decoration:none;
+}
+
+body.proxySchedule fieldset#supportLocations div.scheduleBlock span.repeatWhenText {
+	display:inline-block;
+	margin-bottom: 5px;
+} 
+body.proxySchedule fieldset#supportLocations div.scheduleBlock span.repeatDurationText {
+	display:inline-block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+} 
+
+body.proxySchedule fieldset#supportLocations div.scheduleBlock select.repeatWeeklyParam2 {
+	margin-top: -20px;
+} 
+body.proxySchedule fieldset#supportLocations div.scheduleBlock select.repeatMonthlyByDayParam2 {
+	margin-top: -20px;
+} 
+
+body.proxySchedule fieldset#supportLocations div.scheduleBlock > div.row-fluid [class*="span"]  {
+	min-height: 0px;
+}
+body.proxySchedule fieldset#supportLocations div.scheduleBlock.addSchedule > span {
+	font-weight: bold;
+	color:#666;
+	padding-top: 2px;
+	display: inline-block;
+}
+body.proxySchedule fieldset#supportLocations div.scheduleBlock div.scheduleDates > span {
+	font-weight: bold;
+	color:#666;
+	padding-top: 2px;
+	display: inline-block;
+}
+
+body.proxySchedule fieldset#supportLocations div.scheduleBlock div.scheduleDates p {
+	margin: 0 0 5px;
+}
+
+
+body.proxySchedule fieldset#supportLocations div.scheduleBlock div.editScheduleDiv {
+	margin-top: 5px;
+}
+
+
+/*** pad the whole row***/
+body.proxySchedule fieldset#supportLocations div.locationRow {
+	margin-bottom: 3px;
+	padding-right: 2px;
+}
+
+body.proxySchedule fieldset#supportLocations div.techBlock hr {
+	margin: 0px 0px 4px 0px !important;
+	border: 0px;
+	border-top: 1px solid #EEE;
+}
+
+
+body.proxySchedule fieldset#supportLocations div.techBlock div.editTechSchedule > div.span12{
+	padding: 2px 5px;
+}
+/*** pad the text ***/
+body.proxySchedule fieldset#supportLocations div.techRow {
+	padding: 2px 5px;
+}
+
+
+body.proxySchedule fieldset#supportLocations div.techRow div.techRowTech {
+	padding: 0px 0px;
+	display: inline-block;
+}
+body.proxySchedule fieldset#supportLocations div.techRow div.techRowTech span {
+	width: 100%;
+	display: inline-block;
+}
+body.proxySchedule fieldset#supportLocations div.techRow div.techRowTech span:first-of-type  {
+	padding-bottom: 2px;
+}
+
+body.proxySchedule fieldset#supportLocations div.techRow div.techRowSchedule {
+	padding: 0px 0px;
+	display: inline-block;
+}
+body.proxySchedule fieldset#supportLocations div.techRow div.editTechScheduleDiv {
+	text-align: right;
+	padding-right: 10px;
+}
+
+body.proxySchedule  fieldset#supportLocations div.striped {
+	background-color: #DDDDC7;
+}
+body.proxySchedule  fieldset#supportLocations div.striped_remove {
+	background-color: #DDC7D5;
+}
+
+/* add/edit location modal */
+body.proxySchedule  div#editLocationModal div.alert p {
+	margin-bottom: 10px !important;	
+}
+
+/* END add/edit location modal */
+
+
+body.proxySchedule  div.addSchedule {
+	padding: 5px 0px;
+}
+
+body.proxySchedule  div.addSchedule label.control-label {
+	width:90px;
+}
+body.proxySchedule  div.addSchedule div.controls {
+	margin-left:100px;
+}
+
+body.proxySchedule  div.scheduleBlock {
+	/*padding-bottom: 5px;*/
+	padding: 0px 5px 5px 5px;
+}
+body.proxySchedule  div.scheduleBlock div.control-group {
+	margin-bottom: 2px;
+}
+
+body.proxySchedule  div.scheduleBlock div.scheduleDates > span {
+	margin-bottom: 0px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.techRow {
+	line-height: 14px;
+	margin-bottom: 5px;
+}
+
+
+body.proxySchedule  div.scheduleBlock  div.actionSpacer {
+	padding-top: 10px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.actionDiv div.btn-group li {
+	padding-left: 5px;
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+body.proxySchedule  div.scheduleBlock  div.scheduleBlockNotes {
+	padding-bottom: 7px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician div.selectThisTech {
+	cursor:pointer;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician div.selectedTech {
+	cursor:pointer;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician div.selectedTechSched div.techScheduleListBottom {
+	margin-bottom: 10px;
+}
+
+
+body.proxySchedule  div.scheduleBlock > small {
+	/*margin-bottom: 8px;*/
+	padding: 0px 5px;
+}
+
+body.proxySchedule  div.scheduleBlock div.techBlock {
+	background-color: #DDDDDD;/*#B4DDDD*/
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	min-height: 20px;
+	line-height: 17px;
+	margin: 8px 0px;
+	padding-top: 5px;
+	border: 1px;
+} 
+
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.findTechnicians label.control-label {
+	width: 80px;
+	text-align: left;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.findTechnicians div.controls {
+	margin-left:90px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.foundTechnicians {
+	padding-bottom: 10px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.AssignmentMsg {
+	padding-bottom: 10px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.selectedTechnicians {
+	padding-bottom: 5px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.selectedTechnicians div.selectedTech {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.manualTechLookup {
+	padding-bottom: 5px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.assignNotify {
+	padding-bottom: 5px;
+}/*
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.appointmentSet {
+	padding-bottom: 5px;
+}
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.appointmentSet div.control-group {
+
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.appointmentSet label.control-label {
+	width: 80px;
+	text-align: left;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.appointmentSet div.controls {
+	margin-left: 90px;
+}*/
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.appointmentSet button {
+	margin: 5px 0px;
+}
+/*
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.nonLBSTechDetails {
+	padding-bottom: 5px;
+}
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.nonLBSTechDetails div.control-group {
+
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.nonLBSTechDetails label.control-label {
+	width: 80px;
+	text-align: left;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.nonLBSTechDetails div.controls {
+	margin-left: 90px;
+}*/
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.recruitDetails {
+	padding-bottom: 5px;
+}
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.nonLBSTechDetails {
+	padding-bottom: 5px;
+}
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.control-group {
+	/*padding-top: 5px;*/
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  label.control-label {
+	width: 80px;
+	text-align: left;
+}
+
+body.proxySchedule  div.scheduleBlock  div.addTechnician  div.controls {
+	margin-left: 90px;
+}
+
+body.proxySchedule  div.scheduleBlock  div.editTechSchedule  button {
+	margin: 5px 0px;
+}
+
+
+body.proxySchedule  div#selfAssignModal div.modal-body label.durationLabel {
+	margin-bottom: -2px !important;	
+}
+
+body.proxySchedule div.scheduleBlock div.addTechnician div.findTechnicians label.techSelectLabel {
+	text-align: right;
+}
+
+body.proxySchedule  .closeActionLink {
+	color:#B94A48;
+	font-weight: bold;
+} 
+
+body.proxySchedule div.locationFilterBlock label {
+	margin-bottom: 8px;
+} 
+
+body.proxySchedule div.locationFilterBlock #mgrFilterBlock {
+	padding-bottom: 5px;
+	display: inline-block;
+}
+
+body.proxySchedule div.locationFilterBlock #mgrFilterBlock select {
+	margin-left: 20px;	
+}
+
+body.proxySchedule div.locationFilterBlock #techFilterBlock {
+	padding-bottom: 5px;
+	display: inline-block;
+}
+
+body.proxySchedule div.locationFilterBlock #techFilterBlock select {
+	margin-left: 20px;	
+}
+
+
+body.dataAdmin div.well.areaAction {
+	margin-bottom: 2px;
+}
+
+body.dataAdmin div.well.striped {
+  background-color: #F9F9DC;
+}
+
+
+div.elementRow.striped {
+	background-color: #DDDDC7;
+}
+div.elementRow.striped  {
+	background-color: #DDC7D5;
+}
+
+
+
+
+@media (max-width: 979px) {
+	body.proxySchedule fieldset#supportLocations div.scheduleBlock select.repeatWeeklyParam2 {
+		margin-top: 0px;
+	} 
+	body.proxySchedule fieldset#supportLocations div.scheduleBlock select.repeatMonthlyByDayParam2 {
+		margin-top: 0px;
+	} 
+
+}
+
+@media (max-width: 480px) {
+
+	body.proxySchedule  div.scheduleBlock div.control-group {
+		margin: 0px 3px 10px 3px;
+	}
+
+	body.proxySchedule  div.addSchedule div.controls {
+		margin-left:0px;
+	}
+	body.proxySchedule  div.addSchedule label.control-label {
+		margin-bottom: -2px;	
+	}
+
+	body.proxySchedule  div.scheduleBlock  div.addTechnician  div.controls {/*div.assignNotify */
+		margin-left: 0px;
+	}
+
+	body.proxySchedule  div.scheduleBlock  div.addTechnician   label.control-label {/* div.assignNotify*/
+		margin-bottom: -2px;	
+	}
+
+}	
+
+/*** END set up scheduling blocks ***/  
+
+/*** static detail page styling ***/  
+
+	body.compressed-Static .form-horizontal .control-group {
+		margin-bottom: 4px;
+	}
+
+	body.compressed-Static .form-horizontal label,
+	body.compressed-Static .form-horizontal input,
+	body.compressed-Static .form-horizontal select,
+	body.compressed-Static .form-horizontal textarea
+	 {
+		font-size: 10px;
+		line-height: 16px;
+	}
+
+	body.compressed-Static .form-horizontal select, 
+	body.compressed-Static .form-horizontal input[type="text"], 
+	body.compressed-Static .form-horizontal input[type="password"], 
+	body.compressed-Static .form-horizontal input[type="datetime"], 
+	body.compressed-Static .form-horizontal input[type="datetime-local"], 
+	body.compressed-Static .form-horizontal input[type="date"], 
+	body.compressed-Static .form-horizontal input[type="month"], 
+	body.compressed-Static .form-horizontal input[type="time"], 
+	body.compressed-Static .form-horizontal input[type="week"], 
+	body.compressed-Static .form-horizontal input[type="number"], 
+	body.compressed-Static .form-horizontal input[type="email"], 
+	body.compressed-Static .form-horizontal input[type="url"], 
+	body.compressed-Static .form-horizontal input[type="search"], 
+	body.compressed-Static .form-horizontal input[type="tel"], 
+	body.compressed-Static .form-horizontal input[type="color"], 
+	body.compressed-Static .form-horizontal .uneditable-input
+	 {
+		height: 14px;
+		padding: 2px 4px;
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+	body.compressed-Static .form-horizontal textarea
+	 {
+		padding: 2px 4px;
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+	body.compressed-Static .form-horizontal select, 
+	body.compressed-Static .form-horizontal input[type="file"] {
+		height: 20px;
+		line-height: 14px;
+	}
+
+	body.compressed-Static .form-horizontal .control-label {
+		width: 130px;
+	}
+
+	body.compressed-Static .form-horizontal .controls {
+		margin-left: 140px;
+	}
+
+	body.compressed-Static .form-horizontal .controls a {
+		font-size: 10px;
+	}
+
+	body.compressed-Static .form-horizontal legend {
+		font-size: 16px;
+	}
+
+/*** END static detail page styling ***/  
+
+/*** BEGIN deployment project menu styling ***/  
+body.dplyProj .nav-tabs>li>a {
+	padding-top: 5px;
+    padding-bottom: 3px;
+    line-height: 16px;
+    font-size: .8em !important;
+    border-radius: 2px 2px 0 0;
+}
+
+body.dplyProj .nav-tabs>li>a, .nav-pills>li>a {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-right: 2px;
+    line-height: 14px;
+}
+
+/*** END deployment project menu styling ***/  
+
+/*** BEGIN deployment project status styling ***/  
+.dplyStatusNotStarted {
+  background-color: #CCCCCC !important;
+}
+.dplyInProgress {
+  background-color: #66CC66 !important;
+  color: #FFF !important;
+}
+.dplyIssuesExist {
+  background-color: #FFFF99 !important;
+}
+.dplyAtRisk {
+  background-color: #FF3333 !important;
+  color: #FFF !important;
+}
+.dplyComplete {
+  background-color: #0099FF !important;
+  color: #FFF !important;
+}
+.dplyInProgress a {
+  color: #FFF !important;
+}
+.dplyAtRisk a {
+  color: #FFF !important;
+}
+.dplyComplete a {
+  color: #FFF !important;
+}
+
+
+/*** END deployment project status styling ***/  
+
+/******************  END Page specific styling  ******************/
+
+
+/******************  media queries  ******************/
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+@media (min-width: 767px) {
+	div.modal-body textarea.input-xxlarge {
+		width:85% !important;
+		resize: vertical;
+	}
+}
+
+@media (max-width: 767px) {
+	.stackedFormElement-tablet {
+		margin-top:10px;
+	}
+	
+	div.hero-unit {
+		padding:30px;
+	}
+	
+	.hero-unit h1 {
+		font-size:40px;
+	}
+	
+	/*  Important body and nav bar styles */
+	.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+		margin-right: -10px;
+		margin-left: -10px;
+	}
+	
+	body {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	/*  END Important body and nav bar styles */
+}
+	
+}
+
+@media print {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 980px) and (max-width: 1200px) {
+/* testing only
+  div.control-group {
+      color: green;
+  }*/
+
+}
+
+@media (max-width: 1200px) {
+ /*testing only
+  div.control-group {
+      color: red;
+  }*/
+
+  div.row div.tablet-NoFloat {
+	    float: none;
+	    margin-bottom: 15px;
+	    /*color: blue;*/
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+	div.control-group.tablet-SingleLine {
+		float: left;
+   	 	padding-right: 5px;
+	}
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 480px) {
+	.navbar .nav>li {
+		width: 100%;
+	}
+
+	.stackedFormElement-phone {
+		margin-top:10px;
+	}
+	
+	.timeOfDaySelect {
+		width: 100%;
+	}
+	
+	.timeHourSelect {
+		width: 49% !important;
+	} 
+	
+	.timeMinSelect {
+		width: 49% !important;
+	}
+
+	div.according-heading-activity {
+		padding-left: 0px;
+	}
+
+}
+
+@media (max-width: 979px) {
+	.navbar-fixed-top {
+		/*margin-bottom:0px;*/
+	}
+
+	/*div.control-group.desktop-SingleLine {
+   	 	color: green;
+	}*/
+}
+
+@media (min-width: 980px) {
+
+	div.control-group.desktop-SingleLine {
+		float: left;
+   	 	padding-right: 5px;
+   	 	/*color: red;*/
+	}
+
+}
+
+
+/******************  END media queries  ******************/
+
+
+
+
